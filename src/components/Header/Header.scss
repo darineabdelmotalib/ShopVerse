@@ -1,0 +1,100 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.header {
+    padding: 1.5rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+        padding:2rem;
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+
+    @include desktop {
+        padding:3rem;
+    }
+
+    &__logo {
+        font-family: bold;
+        font-size: 1.4rem;
+        color: $orange;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+
+        @include desktop {
+            font-size: 2.9rem;
+        }
+    }
+}
+
+.links {
+    display:none;
+
+    @include desktop {
+        display:flex;
+        justify-content: space-between;
+        width: 25rem;
+    }
+
+    &__link {
+        @include desktop {
+            color:grey;
+            font-size: 1.3rem;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            transition: 0.1s ease-in-out;
+
+            &:hover {
+                color: $orange;
+                border-bottom: 3px solid $orange;
+                font-family: bold;
+                cursor: pointer;;
+            }
+        }
+    }
+}
+
+.icons {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 8rem;
+
+    @include tablet {
+        width: 15rem;
+    }
+
+    &__icon {
+        width: 1rem;
+
+        @include tablet {
+            width: 1.5rem;
+        }
+    }
+
+    &__sign-in-button {
+        border:0.5px solid $grey;
+        background-color: none;
+        padding:0.3rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        border-radius: 10px;
+        font-size: 0.7rem;
+        color: $grey;
+        font-family:inherit;
+
+        @include tablet {
+            font-size: 1rem;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+        }
+    }
+}
