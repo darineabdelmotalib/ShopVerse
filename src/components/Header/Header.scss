@@ -17,12 +17,14 @@
     }
 
     @include desktop {
-        padding:3rem;
+        padding:4rem;
+        padding-bottom:2rem;
+        padding-top: 2rem;
     }
 
     &__logo {
         font-family: bold;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         color: $orange;
 
         @include tablet {
@@ -47,7 +49,7 @@
     &__link {
         @include desktop {
             color:grey;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             padding-bottom: 1rem;
             padding-top: 1rem;
             transition: 0.1s ease-in-out;
