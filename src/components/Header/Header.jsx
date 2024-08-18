@@ -17,7 +17,7 @@ function Header() {
             <div className="icons">
                 <img src={searchIcon} alt="search icon" className="icons__icon" />
                 <img src={basketIcon} alt="basket icon" className="icons__icon" />
-                <button className="icons__sign-in-button">sign in</button>
+                <button className="icons__sign-in-button">Log In</button>
 
             </div>
         </header>
