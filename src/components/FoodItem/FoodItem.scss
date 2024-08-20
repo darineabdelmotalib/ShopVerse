@@ -5,8 +5,8 @@
 
 
 .dishes {
-    padding-right: 24px;
-    padding-left: 24px;
+  padding-right: 24px;
+  padding-left: 24px;
     margin-top: 1rem;
     margin-bottom: 3rem;
   
@@ -17,8 +17,8 @@
     }
   
     @include desktop {
-      padding-right: 4rem;
-      padding-left: 4rem;
+      padding-right: 2rem;
+      padding-left: 2rem;
     }
   
     &__title {
@@ -52,7 +52,7 @@
       border-radius: 1rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      width: 16rem;
+      width: 17rem;
       height: fit-content;
     }
   
