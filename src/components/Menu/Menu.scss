@@ -1,0 +1,23 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.menu__title {
+    font-size: 1.3rem;
+    font-family: bold;
+    color: black;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 100%;
+    
+
+    @include tablet {
+      font-size: 1.6rem;
+    }
+
+    @include desktop {
+      font-size: 1.7rem;
+    }
+}

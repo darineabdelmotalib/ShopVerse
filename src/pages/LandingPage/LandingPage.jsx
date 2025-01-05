@@ -10,10 +10,12 @@ import pasta from "../../assets/images/menu_7.png";
 import noodles from "../../assets/images/menu_8.png";
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FoodItem from "../../components/FoodItem/FoodItem";
 
 function LandingPage() {
   const [menu, setMenu] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,19 +24,23 @@ function LandingPage() {
         setMenu(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
-        ß;
       }
     };
 
     fetchData();
   }, []);
 
+  function handleMenu(event) {
+    event.preventDefault();
+    navigate("/Menu", { state: { menu } });
+  }
+
   return (
     <section className="landingPage">
       <div className="hero">
         <div className="hero__container">
           <p className="hero__title">Order your favourite food here</p>
-          <button className="hero__button">menu</button>
+          <button className="hero__button" onClick={handleMenu}>menu</button>
         </div>
       </div>
 
@@ -92,9 +98,11 @@ function LandingPage() {
 
       <div className="dishes__big-container">
         {menu?.map((menuItem, index) => {
-          return (
-            <FoodItem key={index} id={menuItem._id} name={menuItem.name} description={menuItem.description} price={menuItem.price} image={menuItem.image} />
-          );
+          if (menuItem._id > 20 && menuItem._id < 29) {
+            return (
+              <FoodItem key={index} id={menuItem._id} name={menuItem.name} description={menuItem.description} price={menuItem.price} image={menuItem.image} />
+            );
+          }
         })}
       </div>
 
@@ -104,3 +112,4 @@ function LandingPage() {
 }
 
 export default LandingPage;
+
